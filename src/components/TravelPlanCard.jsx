@@ -10,7 +10,6 @@ function TravelPlanCard({ plan, onDelete }) {
         <p><strong>Days:</strong> {plan.days}</p>
         <p><strong>Total cost:</strong> {plan.totalCost}€</p>
 
-        {/* Renderizamos los "parts" del plan de viaje */}
         {plan.parts && (
             <div>
                 <h4>Included in the package:</h4>
