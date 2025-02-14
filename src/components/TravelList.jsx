@@ -4,6 +4,12 @@ import travelPlansData from "../assets/travel-plans.json";
 function TravelList() {
     const [travelPlans, setTravelPlans] = useState(travelPlansData);
 
+// Función para eliminar viaje de la lista
+const deleteTravel = (id) => {
+    const updatedTravelPlans = travelPlans.filter(plan => plan.id !== id);
+    setTravelPlans(updatedTravelPlans); // Actualizamos el estado 
+};
+
     return (
         <div>
         
@@ -20,6 +26,9 @@ function TravelList() {
                         {plan.totalCost <= 350 && <span className="label great-deal">Great Deal</span>}
                         {plan.totalCost >= 1500 && <span className="label premium">Premium</span>}
                         {plan.allInclusive && <span className="label all-inclusive">All Inclusive</span>}
+                   
+                        {/*Iteration 3 - button + delete function*/}
+                        <button onClick={() => deleteTravel(plan.id)} className="delete-btn">Delete</button>
                     </li>
                 ))}
             </ul>
